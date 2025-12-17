@@ -1,4 +1,6 @@
-apply plugin: "com.android.application"
+plugins {
+    id "com.android.application"
+}
 
 android {
     namespace "com.gbsb4u.webbrowser"
@@ -12,22 +14,22 @@ android {
         versionName "1.0"
     }
 
-    buildTypes {
-        debug {
-            debuggable true
-        }
-        release {
-            minifyEnabled false
-        }
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
 }
 
 dependencies {
-    implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    // No external dependencies for now
 }
